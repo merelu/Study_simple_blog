@@ -1,0 +1,17 @@
+{
+  "name": "Study_simple_blog",
+  "version": "0.0.1",
+  "description": "nodejs express를 활용한 블로그 서비스",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "repository": "https://github.com/merelu/Study_simple_blog.git",
+  "author": "GYUHA_HWANG <gyuha0310@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  }
+}
