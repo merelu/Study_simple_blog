@@ -21,11 +21,14 @@ module.exports = class Post extends (
         modelName: "Post",
         tableName: "posts",
         paranoid: false,
-        charset: "urf8mb4",
+        charset: "utf8mb4",
         collate: "utf8mb4_general_ci",
       }
     );
   }
 
-  static associate(db) {}
+  static associate(db) {
+    db.Post.belongsTo(db.User);
+    db.Post.belongsToMany(db.Hashtag, { through: "PostHashtag" });
+  }
 };
