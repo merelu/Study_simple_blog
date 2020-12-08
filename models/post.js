@@ -21,7 +21,7 @@ module.exports = class Post extends (
         modelName: "Post",
         tableName: "posts",
         paranoid: false,
-        charset: "urf8mb4",
+        charset: "utf8mb4",
         collate: "utf8mb4_general_ci",
       }
     );
