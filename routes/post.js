@@ -43,14 +43,14 @@ router.post("/", isLoggedIn, upload2.none(), async (req, res, next) => {
     });
     const hashtags = req.body.content.match(/#[^\s#]+/g);
     if (hashtags) {
-      const reqult = await Promise.all(
+      const result = await Promise.all(
         hashtags.map((tag) => {
           return Hashtag.findOrCreate({
             where: { title: tag.slice(1).toLowerCase() },
           });
         })
       );
-      await post.addHashtags(reqult.map((r) => r[0]));
+      await post.addHashtags(result.map((r) => r[0]));
     }
     res.redirect("/");
   } catch (error) {
